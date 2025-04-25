@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Real-Time Tracker</title>
+
+  <!-- Leaflet and styles -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+</head>
+<body>
+
+  <!-- Sidebar for users -->
+  <div id="sidebar">
+    <h2>Users</h2>
+    <ul id="userList"></ul>
+  </div>
+
+  <!-- Map container -->
+  <div id="map"></div>
+
+  <!-- Toast notifications -->
+  <div id="toasts"></div>
+
+  <!-- Leaflet + Socket.IO -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+
+  <!-- Safe USER object (fixed syntax) -->
+  <script>
+    const USER = <%- JSON.stringify({
+      username: username || '',
+      avatar: avatar || '',
+      isAdmin: isAdmin || false
+    }) %>;
+  </script>
+
+  <!-- App logic -->
+  <script src="/js/script.js"></script>
+</body>
+</html>
